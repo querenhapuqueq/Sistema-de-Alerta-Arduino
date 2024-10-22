@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <!--Bootstrap icons-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Estilo customizado -->
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <!-- Javascript -->
+    <script src="scripts.js" defer></script>
+
+
+    <title>PBB - Projeto Biomas do Brasil</title>
+
+</head>
+
+<body>
+    <header class="mb-5">
+        <nav class="navbar navbar-expand-lg barra-nav text-white pt-2 pb-2">
+            <img src="imgs/logo.webp" class="rounded float-left" width="60px" alt="">
+            <h2 class="display-6 ml-auto mr-auto">DASHBOARD DE GERENCIAMENTO</h2>
+            <div class="d-flex flex-column justify-content-end">
+                <small class="hora align-self-end"></small>
+                <small class="data"></small>
+            </div>
+        </nav>
+    </header>
+    <div class="d-flex justify-content-center">
+        <div id="gerenciamento" class="border bg-white shadow-sm gerenciamento"><!--Inicio - Gerenciadores-->
+            <div class="nav-sensor-temp pt-2 pb-2 d-flex justify-content-center text-white">
+                <h6>GERENCIAMENTO DOS ATUADORES</h6>
+            </div>
+            <div class="div-status d-flex flex-column pr-4 pl-3 pt-4"><!--Inicio - Atuador 1-->
+                <div class="d-flex">
+                    <p class="mr-auto">ID:</p>
+                    <small class="text-status"><strong>1</strong></small>
+                </div>
+                <div class="d-flex">
+                    <p class="mr-auto">NOME:</p>
+                    <small class="text-status"><strong>PRAZERES</strong></small>
+                </div>
+                <div class="d-flex">
+                    <p class="mr-auto">STATUS:</p>
+                    <i class="bi bi-toggle-on btn-status" style="font-size: 26px; color: green;"></i>
+                </div>
+            </div><!--Atuador - Sensor 1-->
+            <hr>
+            <!--<div class="div-status d-flex flex-column pr-4 pl-3 pt-3">Inicio - Sensor 2
+                <div class="d-flex">
+                    <p class="mr-auto">ID:</p>
+                    <small class="text-status"><strong>2</strong></small>
+                </div>
+                <div class="d-flex">
+                    <p class="mr-auto">NOME:</p>
+                    <small class="text-status"><strong>UMIDADE</strong></small>
+                </div>
+                <div class="d-flex">
+                    <p class="mr-auto">STATUS:</p>
+                    <button class="btn bg-transparent ">
+                        <i class="bi bi-toggle-off btn-status" style="font-size: 26px; color: rgb(109, 0, 0);"></i>
+                    </button>
+                </div>
+            </div>Fim - Sensor 2
+            <hr>
+            <div class="div-status d-flex flex-column pr-4 pl-3 pt-4">Inicio - Sensor 3
+                <div class="d-flex">
+                    <p class="mr-auto">ID:</p>
+                    <small class="text-status"><strong>3</strong></small>       
+                </div>
+                <div class="d-flex">
+                    <p class="mr-auto">NOME:</p>
+                    <small class="text-status"><strong>UMIDADE DO SOLO</strong></small>
+                </div>
+                <div class="d-flex">
+                    <p class="mr-auto">STATUS:</p>
+                    <button class="btn bg-transparent ">
+                        <i class="bi bi-toggle-off btn-status" style="font-size: 26px; color: rgb(109, 0, 0);"></i>
+                    </button>
+                </div>
+            </div>Fim - Sensor 3-->
+        </div><!--Fim - Gerenciadores-->
+        <div class="border bg-white shadow-sm sensores ml-3">
+            <div class="nav-sensor-temp pt-2 pb-2 mb-2 d-flex justify-content-center text-white">
+                <h6>SENSORES</h6>
+            </div>
+            <div class="div-status d-flex flex-column align-items-center pr-4 pl-3">
+                <div class="d-flex d-inline pt-3 pb-3">
+                    <i class="bi bi-thermometer align-self-center mr-3" style="font-size: 35px; color: red;"></i>
+                    <small class="align-self-center mr-3"><strong>TEMPERATURA</strong>:</small>
+                    <h5 class="marcador-temperatura-text align-self-center" id="marcadorTemperatura">--</h5>
+                </div>
+                <div class="d-flex d-inline mt-2 pt-3 pb-3">
+                    <i class="bi bi-wind align-self-center mr-3" style="font-size: 35px; color: #004AAD;"></i>
+                    <small class="align-self-center mr-3 ml-2"><strong>UMIDADE DO AR</strong>:</small>
+                    <h5 class="marcador-temperatura-text align-self-center" id="marcadorUmidadeAr">--</h5>
+                </div>
+                <div class="d-flex d-inline mt-2 pt-3 pb-3">
+                    <i class="bi bi-moisture align-self-center mr-3" style="font-size: 35px; color: #950202cd;"></i>
+                    <small class="align-self-center mr-3 ml-2"><strong>UMIDADE DO SOLO</strong>:</small>
+                    <h5 class="marcador-temperatura-text align-self-center" id="marcadorUmidadeSolo">--</h5>
+                </div>
+            </div>
+            <div class="alertas mt-1">
+                <h6 class="pt-2 pb-2 d-flex justify-content-center bg-secondary text-white">ALERTAS</h6>
+                <p class="pl-3 pt-2" id="alerta-temperatura"></p>
+                <p class="pl-3 alerta-umidade" id="alerta-umidade-ar"></p>
+                <p class="pl-3 alerta-umidadesolo" id="alerta-umidade-solo"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>

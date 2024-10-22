@@ -1,0 +1,39 @@
+.barra-nav {
+    background: #001f45;
+}
+
+.nav-sensor-temp {
+    background: #0065e0;
+}
+
+.nav-sensor-umid {
+    background: #00387c;
+}
+
+.status {
+    margin-top: -18px;
+}
+
+.marcador-temperatura-text {
+    font-family: 'Lato', sans-serif;
+    font-weight: 600;
+    font-size: 35px;
+}
+
+.gerenciamento {
+    width: 400px;
+}
+
+.sensores {
+    width: 800px;
+    height: 500px;
+}
+
+.margem-lateral {
+    margin-left: 200px;
+}
+
+.btn-status {
+    margin-top: -9px;
+    cursor: pointer;
+}
